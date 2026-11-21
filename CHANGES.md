@@ -43,3 +43,5 @@ Tests: tests/sync_test.js, sync_test2.js (real host + client over HTTP), fuzz.js
 - Dashboard 'Rented vs Available Snapshot' now lists ALL products (was limited to first 8) and shows rented / total under each.
 - Missing Items Bill PDF now uses the same sheet layout as all other bills (logo, GSTIN, Tamil, OUT -> IN dates, days, rate, amount).
 - Build workflow: every push to main now also publishes a direct-download pre-release ('Latest build') with the installer .exe + SHA256.txt, so the installer no longer has to be downloaded inside the Actions zip.
+- Small cleanups: duplicate object keys in site IN-bill preview, safe guard on restoreAutoBackup.
+- ROOT-CAUSE FIX (old bill layout): a return bill with 'fully paid' balance (and any sheet HTML that is not valid XML) made the new bill renderer fail, and the app silently fell back to the OLD layout. Fixed the invalid <br> tag, added an XML safety net, and removed the silent old-layout fallbacks (Return bill, Site full bill, Missing bill) so every bill always uses the new sheet format.
