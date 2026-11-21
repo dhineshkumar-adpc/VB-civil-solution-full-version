@@ -53,3 +53,5 @@ Tests: tests/sync_test.js, sync_test2.js (real host + client over HTTP), fuzz.js
 - Site Ledger: "Close Site" is now disabled while any balance (incl. lost amount) is still due; the check is also enforced in the close function.
 - Contacts: new View screen per contact - trips (date, site / location, amount, note, paid / due) with add / edit / delete, current location with history (a new trip automatically updates the vehicle location), edit contact details, totals.
 - Bills: long addresses are wrapped evenly over the lines and the font shrinks to fit instead of being cut off; Return bill Site box now shows the original bill + site address.
+- Bill view: new 🖨 Print button (also Ctrl+P while a bill is open) for every bill type — dispatch, return, site, missing/lost, receipts, salary slip. Multi-page bills print one sheet per A4 page.
+- Print buttons added next to every bill download: Site Ledger (Full Site Bill, Missing/Lost bill in Missing tab and Bills & History) and Payroll salary-slip lists; every bill view window (dispatch, return, site, receipts, monthly, missing/lost, salary) already has 🖨 Print + Ctrl+P.
